@@ -1199,7 +1199,7 @@ const FunctionGrapher = () => {
                                             <EditableValue label="m (Der):" onInteractionStart={() => { isInteractingRef.current = true; }} value={formatSlope(activePoint.cp2.dx, activePoint.cp2.dy, 'right')} onChange={(val) => updateSlope(activePoint.id, val, 'right')} />
                                         </div>
                                     )}
-                                    <div className="text-[9px] text-gray-400 mt-1 italic">Tip: Escribe +inf o -inf para asíntotas.</div>
+                                    
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-2 mt-3 pt-2 border-t border-yellow-200/50">
@@ -1233,8 +1233,9 @@ const FunctionGrapher = () => {
                                     </div>
                                 )}
                             </div>
-                        ) : (
-                            <p className="text-xs text-center text-gray-400 italic">Haz clic en un punto para editarlo.</p>
+                        ) : (<>
+                        <p className="text-xs text-center text-gray-400 italic">Haz doble clic en un tramo para agregar un punto.</p>
+                            <p className="text-xs text-center text-gray-400 italic">Haz clic en un punto para editarlo.</p></>
                         )}
                     </div>
                 </div>
