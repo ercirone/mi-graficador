@@ -918,7 +918,7 @@ const FunctionGrapher = () => {
       {/* HEADER */}
       <div className="w-full max-w-[1600px] flex justify-between items-center mb-6 bg-white p-4 rounded-lg shadow-sm border border-gray-200">
         <h1 className="text-xl sm:text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <Activity className="text-blue-600" /> Graficador de Funciones
+            <Activity className="text-blue-600" /> Graficador
         </h1>
         <div className="flex gap-2">
             <button onClick={resetAll} className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-md transition border border-gray-300"><RefreshCw size={16} /> <span className="hidden sm:inline">Reiniciar</span></button>
@@ -1151,12 +1151,12 @@ const FunctionGrapher = () => {
                         </h2>
                         
                         <BoundaryControl 
-                            label="Extremo Izquierdo" 
+                            label="Borde izquierdo" 
                             value={activeSegment.startType || 'closed'} 
                             onChange={(val) => updateBoundaryType('startType', val)} 
                         />
                         <BoundaryControl 
-                            label="Extremo Derecho" 
+                            label="Borde derecho" 
                             value={activeSegment.endType || 'closed'} 
                             onChange={(val) => updateBoundaryType('endType', val)} 
                         />
@@ -1233,9 +1233,12 @@ const FunctionGrapher = () => {
                                     </div>
                                 )}
                             </div>
-                        ) : (<>
-                        <p className="text-xs text-center text-gray-400 italic">Haz doble clic en un tramo para agregar un punto.</p>
-                            <p className="text-xs text-center text-gray-400 italic">Haz clic en un punto para editarlo.</p></>
+                        ) : (
+                        <ul className="text-xs text-center text-gray-400 italic">
+                            <li>Haz doble clic en un tramo para agregar un punto.</li>
+                            <li>Haz clic en un punto para editarlo.</li>
+                            <li>Arrastra un punto para moverlo.</li></ul>
+                            
                         )}
                     </div>
                 </div>
